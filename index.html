@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Apartamento en Cartagena</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; text-align: center; }
+    header { position: relative; }
+    img.bienvenida { width: 100%; height: auto; }
+    .idioma-selector { position: absolute; top: 20px; right: 20px; }
+    .idioma-selector button { margin: 0 5px; padding: 8px 12px; cursor: pointer; }
+    .descripcion-boton { margin: 20px; padding: 10px 20px; font-size: 18px; }
+    .galeria { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
+    .actividad { width: 100px; height: 100px; object-fit: cover; cursor: pointer; }
+    @media screen and (max-width: 600px) {
+      .actividad { width: 80px; height: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/CartagenaBanner5.jpg" alt="Bienvenida" class="bienvenida" />
+    <div class="idioma-selector">
+      <button onclick="setIdioma('es')">Español</button>
+      <button onclick="setIdioma('en')">English</button>
+      <button onclick="setIdioma('fr')">Français</button>
+<button class="descripcion-boton" onclick="abrirDescripcion()">
+    Apt- Castelo F 409 Description
+    </div>  
+
+  </button>
+  </header>
+
+
+  <section class="galeria" id="galeria"></section>
+
+  <script>
+    let idioma = 'es';
+
+    function setIdioma(lang) {
+      idioma = lang;
+    }
+
+    function abrirDescripcion() {
+      window.open(`descripcion_${idioma}.html`, '_blank');
+    }
+
+    // Cargar galería de actividades
+    const galeria = document.getElementById('galeria');
+    for (let i = 1; i <= 55; i++) {
+      const img = document.createElement('img');
+      img.src = `images/img${i}.jpg`;
+      img.alt = `Actividad ${i}`;
+      img.className = 'actividad';
+      img.onclick = () => {
+        window.open(`actividad_${i}_${idioma}.html`, '_blank');
+      };
+      galeria.appendChild(img);
+    }
+  </script>
+
+</body>
+</html>
