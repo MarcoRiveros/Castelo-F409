@@ -23,29 +23,51 @@
   <header>
     <img src="images/CARTAGENA.jpg" alt="Bienvenida" class="bienvenida" />
     <div class="idioma-selector">
-      <button onclick="setIdioma('es')">Español</button></br>
-      <button onclick="setIdioma('en')">English</button></br>
-      <button onclick="setIdioma('fr')">Français</button></br></br>
-
+      <button onclick="setIdioma('es', this)">Español</button><br/>
+      <button onclick="setIdioma('en', this)">English</button><br/>
+      <button onclick="setIdioma('fr', this)">Français</button><br/><br/>
     </div>  
   </header>
 
-<button class="descripcion-boton" onclick="abrirDescripcion()">
-    Descripticion Apartamento Castelo -F409 -CARTAGENA-</button>
+  <button id="descripcionBtn" class="descripcion-boton" onclick="abrirDescripcion()">
+    Descripción Apartamento Castelo -F409 -CARTAGENA-
+  </button>
+
   <section class="galeria" id="galeria"></section>
 
   <script>
     let idioma = 'es';
 
-    function setIdioma(lang) {
+    // Traducciones del botón de descripción
+    const descripciones = {
+      es: "Descripción Apartamento Castelo -F409 -CARTAGENA-",
+      en: "Apartment Description Castelo -F409 -CARTAGENA-",
+      fr: "Description Appartement Castelo -F409 -CARTAGENA-"
+    };
+
+    function setIdioma(lang, btn) {
       idioma = lang;
+
+      // Actualizar texto del botón de descripción
+      document.getElementById("descripcionBtn").textContent = descripciones[idioma];
+
+      // Resetear estilos de los botones
+      const botones = document.querySelectorAll('.idioma-selector button');
+      botones.forEach(b => {
+        b.style.backgroundColor = '';
+        b.style.color = '';
+      });
+
+      // Estilo para el botón activo
+      btn.style.backgroundColor = '#007BFF';
+      btn.style.color = 'white';
     }
 
     function abrirDescripcion() {
       window.open(`descripcion_${idioma}.html`, '_blank');
     }
 
-    // Cargar galería de actividades
+    // Cargar galería
     const galeria = document.getElementById('galeria');
     for (let i = 1; i <= 55; i++) {
       const img = document.createElement('img');
@@ -57,6 +79,12 @@
       };
       galeria.appendChild(img);
     }
+
+    // Seleccionar español por defecto
+    window.onload = () => {
+      const defaultBtn = document.querySelector('.idioma-selector button');
+      setIdioma('es', defaultBtn);
+    };
   </script>
 
 </body>
