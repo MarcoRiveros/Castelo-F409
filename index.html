@@ -9,10 +9,39 @@
     header { position: relative; }
     img.bienvenida { width: 100%; height: auto; }
     .idioma-selector { position: absolute; top: 20px; right: 20px; }
-    .idioma-selector button { margin: 0 5px; padding: 8px 12px; cursor: pointer; }
-    .descripcion-boton { margin: 20px; padding: 10px 20px; font-size: 18px; }
-    .galeria { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
-    .actividad { width: 100px; height: 100px; object-fit: cover; cursor: pointer; }
+    .idioma-selector button {
+      margin: 5px 0;
+      padding: 8px 12px;
+      cursor: pointer;
+      border: none;
+      background-color: white;
+    }
+    .idioma-selector button.selected {
+      background-color: lightgray;
+      font-weight: bold;
+    }
+    .descripcion-boton {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .actividad {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    footer {
+      margin: 30px;
+      font-size: 18px;
+    }
     @media screen and (max-width: 600px) {
       .actividad { width: 80px; height: 80px; }
     }
@@ -23,51 +52,67 @@
   <header>
     <img src="images/CARTAGENA.jpg" alt="Bienvenida" class="bienvenida" />
     <div class="idioma-selector">
-      <button onclick="setIdioma('es', this)">Español</button><br/>
-      <button onclick="setIdioma('en', this)">English</button><br/>
-      <button onclick="setIdioma('fr', this)">Français</button><br/><br/>
+      <button id="btn-es" onclick="setIdioma('es')">Español</button><br/>
+      <button id="btn-en" onclick="setIdioma('en')">English</button><br/>
+      <button id="btn-fr" onclick="setIdioma('fr')">Français</button><br/><br/>
     </div>  
   </header>
 
   <button id="descripcionBtn" class="descripcion-boton" onclick="abrirDescripcion()">
-    Descripción Apartamento Castelo -F409 -CARTAGENA-
+    Descripción Apartamento Castelo - F409 - CARTAGENA
   </button>
 
   <section class="galeria" id="galeria"></section>
 
+  <footer>
+    <a id="contactoLink" href="mailto:marthapperez@yahoo.ca">
+      📧 Contáctenos
+    </a>
+  </footer>
+
   <script>
     let idioma = 'es';
 
-    // Traducciones del botón de descripción
-    const descripciones = {
-      es: "Descripción Apartamento Castelo -F409 -CARTAGENA-",
-      en: "Apartment Description Castelo -F409 -CARTAGENA-",
-      fr: "Description Appartement Castelo -F409 -CARTAGENA-"
+    const textos = {
+      es: {
+        descripcion: 'Descripción Apartamento Castelo - F409 - CARTAGENA',
+        contacto: '📧 Contáctenos'
+      },
+      en: {
+        descripcion: 'Apartment Description Castelo - F409 - CARTAGENA',
+        contacto: '📧 Contact Us'
+      },
+      fr: {
+        descripcion: 'Description Appartement Castelo - F409 - CARTAGENA',
+        contacto: '📧 Contactez-nous'
+      }
     };
 
-    function setIdioma(lang, btn) {
+    function setIdioma(lang) {
       idioma = lang;
 
       // Actualizar texto del botón de descripción
-      document.getElementById("descripcionBtn").textContent = descripciones[idioma];
+      document.getElementById('descripcionBtn').textContent = textos[lang].descripcion;
 
-      // Resetear estilos de los botones
-      const botones = document.querySelectorAll('.idioma-selector button');
-      botones.forEach(b => {
-        b.style.backgroundColor = '';
-        b.style.color = '';
+      // Actualizar texto del enlace de contacto
+      document.getElementById('contactoLink').textContent = textos[lang].contacto;
+
+      // Cambiar color del botón seleccionado
+      ['es', 'en', 'fr'].forEach(id => {
+        const btn = document.getElementById('btn-' + id);
+        if (id === lang) {
+          btn.classList.add('selected');
+        } else {
+          btn.classList.remove('selected');
+        }
       });
-
-      // Estilo para el botón activo
-      btn.style.backgroundColor = '#007BFF';
-      btn.style.color = 'white';
     }
 
     function abrirDescripcion() {
       window.open(`descripcion_${idioma}.html`, '_blank');
     }
 
-    // Cargar galería
+    // Cargar galería de actividades
     const galeria = document.getElementById('galeria');
     for (let i = 1; i <= 55; i++) {
       const img = document.createElement('img');
@@ -80,11 +125,8 @@
       galeria.appendChild(img);
     }
 
-    // Seleccionar español por defecto
-    window.onload = () => {
-      const defaultBtn = document.querySelector('.idioma-selector button');
-      setIdioma('es', defaultBtn);
-    };
+    // Establecer idioma inicial
+    setIdioma('es');
   </script>
 
 </body>
