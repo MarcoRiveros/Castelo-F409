@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 20</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 20 - English</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activity 20: Aviary - Cartagena</h1>
-  <img src="images/img20.jpg" alt="Activity 20: Aviary - Cartagena" />
+  <div class="contenedor-imagen">
+    <img src="images/img20.jpg" alt="Activity 20">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>20- How to experience the Aviary? The National Aviary of Cartagena is an ambitious project, developed to showcase Colombia's incredible diversity of birdlife. The facility, which spans 7 hectares, is the largest in the Americas and the sixth largest in the world, and is home to over 1,800 birds from more than 138 different species. Impressive, right? Marvel at the imposing Andean condor -Colombia’s national bird-, enjoy the spectacular tropical birds with their multicolored plumage, like the scarlet macaws, the vibrant green jay, and the beautiful blue-winged tanager. Or if you happen to have a thing for the retro tropical vibes of flamingos...you're in luck! There's an entire flock of them! But the park isn’t just about the birds. It’s also a fantastic showcase of Colombian flora and fauna, playing an important role in conservation and education, especially for many species that are endangered. It’s a perfect half-day trip for just about everyone: kids love it, bird lovers are fascinated, nature enthusiasts are delighted, and influencers looking for photo-worthy moments? They love it too. In short – it’s a hit with everyone!</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">More Information</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Close</button>
 
-  <button onclick="window.close()">Close</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_20';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
