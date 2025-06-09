@@ -2,21 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 10 - Español</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 10: Islas del Rosario - Cartagena</h1>
-  <img src="images/img10.jpg" alt="Ciudad Amurallada" />
+  <div class="contenedor-imagen">
+    <img src="images/img10.jpg" alt="Actividad 10">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>10- Si estás en Cartagena y buscas playas en entornos más naturales y apartados del bullicio turístico, una excelente opción son las Islas del Rosario. Este encantador archipiélago, compuesto por unas 28 islas, se encuentra a menos de una hora en lancha desde la ciudad. En Cartagena encontrarás numerosas agencias que ofrecen este servicio con distintos tipos de planes turísticos.Las Islas del Rosario te esperan con playas de arena blanca y aguas cristalinas, ideales para relajarse y disfrutar de la naturaleza. Además, es un lugar perfecto para descubrir la riqueza de la vida marina: peces exóticos, corales multicolores y un mundo submarino fascinante serán la recompensa para quienes se animen a sumergirse en las cálidas aguas del mar Caribe.</p>
-  <a href="https://www.youtube.com/watch?v=DRUUWk_fLV0" target="_blank">More Information</a><br/>
+ <a href=" https://www.museocarmona.com/index.html#expoid" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Cerrar</button>
 
-  <button onclick="window.close()">Cerrar</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_10';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
