@@ -1,22 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 12</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 12 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 12 : Îles du Rosaire – Carthagène</h1>
-  <img src="images/img12.jpg" alt="Îles du Rosaire" />
-  <p>12-Bien que beaucoup l’appellent  l’île de Barú, il s’agit en réalité d’une péninsule, délimitée par la baie de Carthagène, le canal du Dique et la mer des Caraïbes. Elle se distingue par la couleur de son sable — blanc et rosé — ainsi que par la clarté de ses eaux, qui permet d’admirer les fonds marins. Dans ses environs, on trouve des canaux bordés de mangroves, des lagunes calmes et de magnifiques jardins sous-marins.Barú offre plusieurs plages, parmi lesquelles les plus connues sont Playa Blanca, Cholón, Agua Azul et Agua Tranquila. <br/>Playa Blanca est la plus grande et, comme son nom l’indique, possède un sable clair qui contraste avec les eaux turquoise. On y trouve également une grande variété d’options gastronomiques. <br/>Cholón n’est accessible qu’en bateau. La plage y est petite, mais le véritable attrait est d’y ancrer son bateau ou yacht, profiter du soleil, de la musique et de l’ambiance festive. C’est l’endroit idéal pour voir et être vu ». Il est fortement recommandé de demander les prix avant de commander nourriture ou boissons. <br/>À l’opposé, Agua Azul et Agua Tranquila sont parfaites pour se détendre. Ce sont des plages calmes, idéales pour s’allonger sur un transat — ou directement sur le sable — et savourer la tranquillité et la beauté du paysage.</p>
+  <div class="contenedor-imagen">
+    <img src="images/img12.jpg" alt="Activite 12">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
+ <p>12-Bien que beaucoup l’appellent  l’île de Barú, il s’agit en réalité d’une péninsule, délimitée par la baie de Carthagène, le canal du Dique et la mer des Caraïbes. Elle se distingue par la couleur de son sable — blanc et rosé — ainsi que par la clarté de ses eaux, qui permet d’admirer les fonds marins. Dans ses environs, on trouve des canaux bordés de mangroves, des lagunes calmes et de magnifiques jardins sous-marins.Barú offre plusieurs plages, parmi lesquelles les plus connues sont Playa Blanca, Cholón, Agua Azul et Agua Tranquila. <br/>Playa Blanca est la plus grande et, comme son nom l’indique, possède un sable clair qui contraste avec les eaux turquoise. On y trouve également une grande variété d’options gastronomiques. <br/>Cholón n’est accessible qu’en bateau. La plage y est petite, mais le véritable attrait est d’y ancrer son bateau ou yacht, profiter du soleil, de la musique et de l’ambiance festive. C’est l’endroit idéal pour voir et être vu ». Il est fortement recommandé de demander les prix avant de commander nourriture ou boissons. <br/>À l’opposé, Agua Azul et Agua Tranquila sont parfaites pour se détendre. Ce sont des plages calmes, idéales pour s’allonger sur un transat — ou directement sur le sable — et savourer la tranquillité et la beauté du paysage.</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Plus d'informations</a><br/>
 
-  <button onclick="window.close()">Fermer</button>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
+
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_12';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
