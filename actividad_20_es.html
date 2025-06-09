@@ -2,21 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 20</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 20 - Español</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 20: Aviario - Cartagena</h1>
-  <img src="images/img20.jpg" alt="Ciudad Amurallada" />
+  <div class="contenedor-imagen">
+    <img src="images/img20.jpg" alt="Actividad 20">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>20- Cómo vivir la experiencia del aviario? El Aviario Nacional de Cartagena es un proyecto ambicioso, desarrollado para mostrar la increíble diversidad de aves que hay en Colombia. El recinto, que abarca 7 hectáreas, es el más grande de América y el sexto más grande del mundo, y alberga más de 1,800 aves de más de 138 especies distintas. Impresionante, ¿verdad? Admira al imponente cóndor de los Andes -ave nacional de Colombia, disfruta de las espectaculares aves tropicales de plumas multicolores, como las guacamayas escarlata, el vibrante chara verde y el hermoso tángara ala-azul. O tienes una obsesión con el estilo retro tropical de los flamencos... - estás de suerte- Hay toda una bandada de ellos. Pero el parque no es solo para las aves. También es un ejemplo fantástico de flora y fauna colombiana, cumpliendo un papel importante en la conservación y la educación, especialmente para muchas especies en peligro de extinción. Es una excelente excursión de medio día para prácticamente todos: a los niños les encanta, a los amantes de las aves les fascina, a los curiosos de la naturaleza les encanta, a los influencers que quieren muchas fotos con likes... en fin, a todos! </p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Cerrar</button>
 
-  <button onclick="window.close()">Cerrar</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_20';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
