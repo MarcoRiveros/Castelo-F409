@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 35</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 35 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 35 : Fête en CHIVA – Carthagène -</h1>
-  <img src="images/img35.jpg" alt="Fête en CHIVA" />
+  <div class="contenedor-imagen">
+    <img src="images/img35.jpg" alt="Activite 35">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>35-Lorsque la nuit tombe, la fête commence à Carthagène. La vie nocturne est présente dans chaque coin de la ville. Pour profiter de toute l'offre de divertissement que Carthagène a à offrir, vous pouvez parcourir la ville accompagné d'une ambiance musicale animée et d'un guide récréatif qui vous invitera à découvrir l'essence de la ville. La Chiva est un bus traditionnel spécialement conçu pour organiser une fête à l'arrière. Ces bus colorés sont utilisés pour des sorties festives avec de la musique caribéenne. C'est une promenade où vous pouvez rencontrer des gens du monde entier et élargir votre cercle d'amis. Une expérience à ne pas manquer ! 😊</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Plus d'informations</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
 
-  <button onclick="window.close()">Fermer</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_35';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
