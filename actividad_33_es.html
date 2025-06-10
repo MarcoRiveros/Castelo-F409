@@ -2,21 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 33</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 33 - Español</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 33: Cartagena un destino de playa ideal</h1>
-  <img src="images/img33.jpg" alt="Ciudad Amurallada" />
+  <div class="contenedor-imagen">
+    <img src="images/img33.jpg" alt="Actividad 33">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>33- Más allá de su invaluable riqueza cultural dentro de la ciudad amurallada, Cartagena también se destaca como un destino de playa ideal, con una hermosa costa bañada por el mar Caribe. Esta combinación la ha llevado a figurar en prestigiosas listas como “Los 10 mejores destinos de Sudamérica” y “Las mejores ciudades sudamericanas para visitar”. A solo 15 km del centro histórico, encontrarás la tranquila Playa de Manzanillo, ubicada justo donde termina la Ciénaga de la Virgen. Es una playa extensa, de aguas serenas y con muy poca afluencia de visitantes, perfecta para desconectarte, relajarte y disfrutar de la naturaleza.</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Cerrar</button>
 
-  <button onclick="window.close()">Cerrar</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_33';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
