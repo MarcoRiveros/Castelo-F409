@@ -2,21 +2,95 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 41</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activité 42 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 41 : Le Marché des Bóvedas de Carthagène</h1>
-  <img src="images/img41.jpg" alt="Le Marché des Bóvedas />
+  <div class="contenedor-imagen">
+    <img src="images/img41.jpg" alt="Activite 41">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>41- Le Marché des Bóvedas à Cartagena : Ce bâtiment imposant, avec 47 arcs et 23 coupoles, et sa façade jaune vive, est impossible à manquer. Les Bóvedas étaient la dernière section construite du système de fortifications de Cartagena. Relié aux murailles de la ville, il a été initialement conçu pour stocker des munitions, puis a servi de refuge pour les troupes en cas d'attaque, avant de devenir une prison. Aujourd'hui, les jours où les Bóvedas étaient utilisées comme donjons sont révolus. Le bâtiment abrite désormais le Marché des Bóvedas, où les anciennes cellules de prison ont été transformées en boutiques de souvenirs proposant une large gamme de souvenirs typiquement colombiens. Ici, vous pouvez trouver des mochilas, des hamacs, des aimants, des petites statues de Botero et des vêtements traditionnels colombiens.</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Plus d'informations</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
 
-  <button onclick="window.close()">Fermer</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_41';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
