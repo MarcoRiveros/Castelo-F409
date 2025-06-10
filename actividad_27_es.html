@@ -2,21 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 27</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 27 - Español</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 27: la iguana del Caribe en Cartagena</h1>
-  <img src="images/img27.jpg" alt="Ciudad Amurallada" />
+  <div class="contenedor-imagen">
+    <img src="images/img27.jpg" alt="Actividad 27">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>27- En Cartagena de Indias, Colombia, las iguanas forman parte del paisaje natural y cultural de la región. Entre las más comunes se encuentran la iguana verde y la iguana del Caribe , que habitan tanto en zonas boscosas como en las cercanías de áreas urbanas. Estas impresionantes lagartijas de gran tamaño son herbívoras, alimentándose exclusivamente de hojas y frutas, y pasan la mayor parte del día en los árboles en busca de alimento. Como otras especies de lagartos, poseen una curiosa habilidad de defensa: si se sienten amenazadas y son atrapadas por la cola, pueden desprenderla para escapar, y con el tiempo, regeneran una nueva. Lamentablemente, las iguanas también enfrentan amenazas por la caza indiscriminada de su carne y huevos, lo que pone en riesgo su preservación en algunas zonas. Aun así, observarlas en su hábitat natural es una experiencia fascinante para quienes visitan Cartagena y desean conectarse con su rica biodiversidad.</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Cerrar</button>
 
-  <button onclick="window.close()">Cerrar</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_27';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
