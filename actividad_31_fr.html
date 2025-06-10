@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 31</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 31 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 31 : Vivez une expérience unique dans le ciel de Carthagène !</h1>
-  <img src="images/img31.jpg" alt="Dans le ciel de Carthagène !" />
-  <p>31-Vivez le frisson de voler au-dessus de Carthagène ! Nous vous invitons à vivre une expérience inoubliable de parasailing au-dessus de l'une des plus belles plages de Carthagène des Indes : la plage de Morros. Laissez-vous porter par le vent et envolez-vous jusqu'à 50 mètres au-dessus de la mer des Caraïbes, tout en admirant une vue panoramique à couper le souffle. Cette activité allie aventure, adrénaline et beauté naturelle, parfaite pour les amateurs de sensations fortes et ceux qui souhaitent créer des souvenirs inoubliables. Vous aurez également la chance de prendre des photos spectaculaires depuis les airs, avec la mer et la ville en toile de fond. L’une des expériences les plus exaltantes à vivre à Carthagène. À ne pas manquer !</p>
+  <div class="contenedor-imagen">
+    <img src="images/img31.jpg" alt="Activite 31">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
+<p>31-Vivez le frisson de voler au-dessus de Carthagène ! Nous vous invitons à vivre une expérience inoubliable de parasailing au-dessus de l'une des plus belles plages de Carthagène des Indes : la plage de Morros. Laissez-vous porter par le vent et envolez-vous jusqu'à 50 mètres au-dessus de la mer des Caraïbes, tout en admirant une vue panoramique à couper le souffle. Cette activité allie aventure, adrénaline et beauté naturelle, parfaite pour les amateurs de sensations fortes et ceux qui souhaitent créer des souvenirs inoubliables. Vous aurez également la chance de prendre des photos spectaculaires depuis les airs, avec la mer et la ville en toile de fond. L’une des expériences les plus exaltantes à vivre à Carthagène. À ne pas manquer !</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Plus d'informations</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
 
-  <button onclick="window.close()">Fermer</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_31';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
