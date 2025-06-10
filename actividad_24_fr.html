@@ -1,22 +1,119 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 24</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 24 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 24 : Chaussures Vieilles – Carthagène</h1>
-  <img src="images/img24.jpg" alt="Chaussures Vieilles" />
-  <p>24-Le poète Luis Carlos López, surnommé El Tuerto -le borgne-, mentionne dans son poème « À ma ville natale » les vieux souliers comme un symbole d’amour pour la ville fortifiée, et le sculpteur Héctor Lombana a transformé cet amour en un monument que les habitants de Carthagène ressentent comme pleinement leur, et que les touristes trouvent à la fois pittoresque et curieux. Ces derniers accourent avec enthousiasme pour prendre une photo et immortaliser un moment véritablement magique dans une ville qui est synonyme de beauté. Le monument des Vieux Souliers est situé derrière le château de San Felipe, et grâce à cet emplacement, il est visité par de nombreux touristes qui trouvent dans cette œuvre un charme absolument irrésistible. Voici le poème de Tuerto López qui a inspiré la sculpture : </br></br>À ma ville natale </br></br>-Noble coin des aïeux : rien —Comme évoquer, en traversant les ruelles, —Les temps de la croix et de l’épée, —De la lanterne enfumée et des chandelles. —Car ton âge de roman est révolu, —Ville fortifiée… les caravelles —Ont quitté pour toujours ta rade… —L’huile n’arrive plus dans des jarres ! —Tu fus héroïque au temps des colonies, —Quand tes fils, nobles aigles, —N’étaient pas une volée d’hirondelles. —Mais aujourd’hui, pleine d’un vieux désordre charmant, —Tu peux encore inspirer cet amour touchant —Qu’on éprouve pour de vieux souliers.</p>
- <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  <div class="contenedor-imagen">
+    <img src="images/img24.jpg" alt="Activite 24">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
+  <p>24-Le poète Luis Carlos López, surnommé El Tuerto -le borgne-, mentionne dans son poème « À ma ville natale » les vieux souliers comme un symbole d’amour pour la ville fortifiée, et le sculpteur Héctor Lombana a transformé cet amour en un monument que les habitants de Carthagène ressentent comme pleinement leur, et que les touristes trouvent à la fois pittoresque et curieux. Ces derniers accourent avec enthousiasme pour prendre une photo et immortaliser un moment véritablement magique dans une ville qui est synonyme de beauté. Le monument des Vieux Souliers est situé derrière le château de San Felipe, et grâce à cet emplacement, il est visité par de nombreux touristes qui trouvent dans cette œuvre un charme absolument irrésistible. Voici le poème de Tuerto López qui a inspiré la sculpture : </br></br>
 
-  <button onclick="window.close()">Cerrar</button>
+<h1>À ma ville natale </h1><br/>
+
+<i>Noble coin des aïeux : rien <br/>
+Comme évoquer, en traversant les ruelles,<br/>
+Les temps de la croix et de l’épée,<br/>
+De la lanterne enfumée et des chandelles.<br/><br/>
+
+Car ton âge de roman est révolu,<br/>
+Ville fortifiée… les caravelles<br/>
+Ont quitté pour toujours ta rade…<br/>
+L’huile n’arrive plus dans des jarres! <br/><br/>
+
+Tu fus héroïque au temps des colonies,<br/>
+Quand tes fils, nobles aigles,<br/>
+N’étaient pas une volée d’hirondelles. <br/><br/>
+
+Mais aujourd’hui, pleine d’un vieux désordre charmant,<br/>
+Tu peux encore inspirer cet amour touchant<br/>
+Qu’on éprouve pour de vieux souliers.<br/>
+<br/>
+Luis Carlos López
+</i></p>
+ <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
+
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_24';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
