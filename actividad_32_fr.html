@@ -2,21 +2,95 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 32</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 32 - Français</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Activité 32 : Découvrez la magie de l’Aviario National de Carthagène !</h1>
-  <img src="images/img32.jpg" alt="Aviario National de Carthagène" />
+  <div class="contenedor-imagen">
+    <img src="images/img32.jpg" alt="Activite 32">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>32-Découvrez la magie de l’Aviario Nacional de Cartagena ! Vivez une expérience inoubliable dans l’un des sanctuaires d’oiseaux les plus impressionnants d’Amérique. L’Aviario National de Colombie est un projet ambitieux conçu pour mettre en valeur l’incroyable diversité des oiseaux du pays. Avec ses 7 hectares, c’est le plus grand aviarium des Amériques et le sixième plus grand au monde, abritant plus de 1 800 oiseaux de 138 espèces différentes. Un véritable trésor naturel ! Laissez-vous émerveiller par le majestueux condor des Andes, oiseau national de la Colombie, et par un festival de couleurs tropicales avec les aras écarlates, le lumineux geai vert ou encore le superbe tangara à ailes bleues. Fan du style rétro-tropical des flamants roses ? Bonne nouvelle : une élégante colonie vous attend. Mais le parc ne se limite pas aux oiseaux : il offre aussi une vitrine exceptionnelle de la flore et de la faune colombiennes, tout en jouant un rôle essentiel dans la conservation et l’éducation environnementale, notamment pour les espèces menacées. C’est une excellente excursion d’une demi-journée, parfaite pour tous : les enfants s’amusent, les passionnés d’ornithologie sont ravis, les amoureux de la nature sont comblés, et les créateurs de contenu trouvent des décors parfaits pour leurs photos. En résumé : une sortie incontournable !</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Plus d'informations</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Fermer</button>
 
-  <button onclick="window.close()">Fermer</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_32';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
