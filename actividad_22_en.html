@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 22</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 22 - English</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 22: Snorkel - Cartagena</h1>
-  <img src="images/img22.jpg" alt="Snorkel" />
+  <div class="contenedor-imagen">
+    <img src="images/img22.jpg" alt="Activity 22">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>22-Welcome to a fascinating world where the beauty of nature is revealed under the crystal clear waters of the Colombian Caribbean. The Corales del Rosario and San Bernardo National Natural Park, better known as Islas del Rosario, offers lovers of aquatic adventure an unforgettable experience through its exceptional snorkeling areas.</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">More information</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Close</button>
 
-  <button onclick="window.close()">Close</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_22';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
