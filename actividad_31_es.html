@@ -2,21 +2,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Actividad 31</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activite 31 - Español</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; text-align: center; }
-    img { max-width: 100%; height: auto; }
-    button { margin-top: 20px; padding: 10px 20px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    .contenedor-imagen {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .contenedor-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .idioma-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .idioma-selector button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+    }
+
+    .descripcion {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    .cerrar-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <h1>Actividad 31: ¡Vive una experiencia única en el cielo de Cartagena!</h1>
-  <img src="images/img31.jpg" alt="Ciudad Amurallada" />
+  <div class="contenedor-imagen">
+    <img src="images/img31.jpg" alt="Actividad 31">
+    <div class="idioma-selector">
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">English</button>
+      <button onclick="cambiarIdioma('fr')">Français</button>
+    </div>
+  </div>
+  <div class="descripcion">
   <p>31- ¡Vive una experiencia única en el cielo de Cartagena! Te invitamos a disfrutar de un emocionante paseo en parasailing sobre una de las playas más hermosas de Cartagena de Indias: Playa Morros. Déjate llevar por el viento y elévate hasta 50 metros sobre el mar Caribe, mientras contemplas una vista panorámica espectacular que te dejará sin aliento. Esta actividad combina aventura, adrenalina y belleza natural, ideal para quienes buscan emociones fuertes y recuerdos inolvidables. Además, tendrás la oportunidad de tomar fotos increíbles desde las alturas, con el mar y la ciudad como telón de fondo. Una de las experiencias más emocionantes que puedes vivir en Cartagena. ¡No te la pierdas!</p>
  <a href="https://www.getyourguide.com/cartagena-l362/" target="_blank">Mas Informacion</a><br/>
+  </div>
+  <button class="cerrar-btn" onclick="cerrarPagina()">Cerrar</button>
 
-  <button onclick="window.close()">Cerrar</button>
+  <script>
+    function cambiarIdioma(idioma) {
+      const nombreBase = 'actividad_31';
+      window.location.href = `${nombreBase}_${idioma}.html`;
+    }
+
+    function cerrarPagina() {
+      window.close();
+    }
+  </script>
 
 </body>
 </html>
